@@ -1,15 +1,6 @@
 use std::fs;
 
-#[allow(unused)]
-pub fn day2() {
-    println!("day2");
-    part1();
-    part2();
-}
-
 pub fn part1() {
-    println!("part1");
-
     let res = count_safe_reports("./inputs/samples/day2.txt", false);
     println!("sample: {res}");
 
@@ -18,8 +9,6 @@ pub fn part1() {
 }
 
 pub fn part2() {
-    println!("part2");
-
     let res = count_safe_reports("./inputs/samples/day2.txt", true);
     println!("sample: {res}");
 

@@ -1,15 +1,6 @@
 use std::fs;
 
-#[allow(unused)]
-pub fn day3() {
-    println!("day3");
-    part1();
-    part2();
-}
-
 pub fn part1() {
-    println!("part1");
-
     let res = mul("./inputs/samples/day3-1.txt");
     println!("sample: {res}");
 
@@ -18,8 +9,6 @@ pub fn part1() {
 }
 
 pub fn part2() {
-    println!("part2");
-
     let res = prog("./inputs/samples/day3-2.txt");
     println!("sample: {res}");
 

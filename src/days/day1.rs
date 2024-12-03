@@ -1,15 +1,6 @@
 use std::{collections::HashMap, fs};
 
-#[allow(unused)]
-pub fn day1() {
-    println!("day1");
-    part1();
-    part2();
-}
-
 pub fn part1() {
-    println!("part1");
-
     let res = get_diff("./inputs/samples/day1.txt");
     println!("sample: {res}");
 
@@ -18,8 +9,6 @@ pub fn part1() {
 }
 
 pub fn part2() {
-    println!("part2");
-
     let res = get_similarity_score("./inputs/samples/day1.txt");
     println!("sample: {res}");
 

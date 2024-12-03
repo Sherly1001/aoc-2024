@@ -1,10 +1,41 @@
-mod days;
+use std::{env, process::ExitCode};
 
-#[allow(unused)]
+mod days;
 use days::*;
 
-fn main() {
-    // day1::day1();
-    // day2::day2();
-    day3::day3();
+macro_rules! run {
+    ($day:expr, [$($days:ident),+ $(,)?]) => {
+        match $day.as_str() {
+            $(
+                stringify!($days) => {
+                    println!("============================ part 1 ============================");
+                    $days::part1();
+
+                    println!("============================ part 2 ============================");
+                    $days::part2();
+                }
+            ),+
+            _ => {
+                eprintln!("{} not found.", $day);
+                return ExitCode::FAILURE;
+            }
+        }
+    };
+}
+
+fn main() -> ExitCode {
+    let args: Vec<String> = env::args().collect();
+    if args.len() < 2 {
+        eprintln!("Missing day to run.");
+        return ExitCode::FAILURE;
+    }
+
+    let mut day = args[1].clone();
+    if !day.starts_with("day") {
+        day = format!("day{day}");
+    }
+
+    run!(day, [day1, day2, day3]);
+
+    ExitCode::SUCCESS
 }
