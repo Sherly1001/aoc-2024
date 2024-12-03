@@ -1,5 +1,6 @@
 use std::{collections::HashMap, fs};
 
+#[allow(unused)]
 pub fn day1() {
     println!("day1");
     part1();
