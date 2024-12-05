@@ -35,7 +35,7 @@ fn main() -> ExitCode {
         day = format!("day{day}");
     }
 
-    run!(day, [day1, day2, day3, day4]);
+    run!(day, [day1, day2, day3, day4, day5]);
 
     ExitCode::SUCCESS
 }
