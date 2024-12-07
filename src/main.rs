@@ -1,4 +1,4 @@
-use std::{env, process::ExitCode};
+use std::{env, process};
 
 mod days;
 mod utils;
@@ -19,17 +19,17 @@ macro_rules! run {
             ),+
             _ => {
                 eprintln!("{} not found.", $day);
-                return ExitCode::FAILURE;
+                process::exit(1);
             }
         }
     };
 }
 
-fn main() -> ExitCode {
+fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() < 2 {
         eprintln!("Missing day to run.");
-        return ExitCode::FAILURE;
+        process::exit(1);
     }
 
     let mut day = args[1].clone();
@@ -38,6 +38,4 @@ fn main() -> ExitCode {
     }
 
     run!(day, [day1, day2, day3, day4, day5, day6]);
-
-    ExitCode::SUCCESS
 }
