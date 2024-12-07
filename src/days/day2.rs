@@ -1,4 +1,4 @@
-use std::fs;
+use crate::utils::parse_input::parse_input_vec2d;
 
 pub fn part1() {
     let res = count_safe_reports("./inputs/samples/day2.txt", false);
@@ -59,20 +59,8 @@ pub fn is_safe_part2(v: &Vec<i64>) -> bool {
 pub fn count_safe_reports(file_name: &str, is_part2: bool) -> u64 {
     let checker = if is_part2 { is_safe_part2 } else { is_safe };
 
-    parse_input(file_name)
+    parse_input_vec2d(file_name)
         .iter()
         .map(|report| if checker(report) { 1 } else { 0 })
         .sum()
-}
-
-pub fn parse_input(file_name: &str) -> Vec<Vec<i64>> {
-    fs::read_to_string(file_name)
-        .unwrap()
-        .lines()
-        .map(|line| {
-            line.split_whitespace()
-                .map(|v| v.parse().unwrap())
-                .collect()
-        })
-        .collect()
 }

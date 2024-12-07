@@ -1,4 +1,4 @@
-use std::fs;
+use crate::utils::parse_input::parse_input_vec2d_char;
 
 pub fn part1() {
     let res = count_xmas("./inputs/samples/day4.txt");
@@ -17,7 +17,7 @@ pub fn part2() {
 }
 
 pub fn count_xmas(file_name: &str) -> usize {
-    let map = parse_input(file_name);
+    let map = parse_input_vec2d_char(file_name);
 
     let mut count = 0;
     for x in -1..2 {
@@ -42,7 +42,7 @@ pub fn count_xmas(file_name: &str) -> usize {
 }
 
 pub fn count_x_mas(file_name: &str) -> usize {
-    let map = parse_input(file_name);
+    let map = parse_input_vec2d_char(file_name);
 
     let mut count = 0;
     for i in 1..map.len() - 1 {
@@ -98,12 +98,4 @@ pub fn get_string_from_to(
     }
 
     Some(chars.iter().collect())
-}
-
-pub fn parse_input(file_name: &str) -> Vec<Vec<char>> {
-    fs::read_to_string(file_name)
-        .unwrap()
-        .lines()
-        .map(|line| line.chars().collect())
-        .collect()
 }

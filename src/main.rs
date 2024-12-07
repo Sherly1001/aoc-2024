@@ -1,6 +1,8 @@
 use std::{env, process::ExitCode};
 
 mod days;
+mod utils;
+
 use days::*;
 
 macro_rules! run {
@@ -35,7 +37,7 @@ fn main() -> ExitCode {
         day = format!("day{day}");
     }
 
-    run!(day, [day1, day2, day3, day4, day5]);
+    run!(day, [day1, day2, day3, day4, day5, day6]);
 
     ExitCode::SUCCESS
 }
