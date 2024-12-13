@@ -11,10 +11,14 @@ macro_rules! run {
             $(
                 stringify!($days) => {
                     println!("============================ part 1 ============================");
+                    let timer = std::time::Instant::now();
                     $days::part1();
+                    println!("solve time: {}", format!("{:?}", timer.elapsed()));
 
                     println!("============================ part 2 ============================");
+                    let timer = std::time::Instant::now();
                     $days::part2();
+                    println!("solve time: {}", format!("{:?}", timer.elapsed()));
                 }
             ),+
             _ => {
@@ -34,8 +38,11 @@ fn main() {
 
     let mut day = args[1].clone();
     if !day.starts_with("day") {
-        day = format!("day{day}");
+        day = format!("day{:02}", day.parse::<u32>().unwrap());
     }
 
-    run!(day, [day1, day2, day3, day4, day5, day6, day7, day8, day9]);
+    run!(
+        day,
+        [day01, day02, day03, day04, day05, day06, day07, day08, day09]
+    );
 }

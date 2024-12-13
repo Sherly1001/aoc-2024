@@ -1,18 +1,18 @@
 use std::{cmp::Ordering, fs};
 
 pub fn part1() {
-    let res = count_middles("./inputs/samples/day5.txt");
+    let res = count_middles("./inputs/samples/day05.txt");
     println!("sample: {res}");
 
-    let res = count_middles("./inputs/puzzles/day5.txt");
+    let res = count_middles("./inputs/puzzles/day05.txt");
     println!("puzzle: {res}");
 }
 
 pub fn part2() {
-    let res = count_middles_fixed("./inputs/samples/day5.txt");
+    let res = count_middles_fixed("./inputs/samples/day05.txt");
     println!("sample: {res}");
 
-    let res = count_middles_fixed("./inputs/puzzles/day5.txt");
+    let res = count_middles_fixed("./inputs/puzzles/day05.txt");
     println!("puzzle: {res}");
 }
 

@@ -3,18 +3,18 @@ use std::fs;
 use itertools::Itertools;
 
 pub fn part1() {
-    let res = move_file_splited("./inputs/samples/day9.txt");
+    let res = move_file_splited("./inputs/samples/day09.txt");
     println!("sample: {res}");
 
-    let res = move_file_splited("./inputs/puzzles/day9.txt");
+    let res = move_file_splited("./inputs/puzzles/day09.txt");
     println!("puzzle: {res}");
 }
 
 pub fn part2() {
-    let res = move_file("./inputs/samples/day9.txt");
+    let res = move_file("./inputs/samples/day09.txt");
     println!("sample: {res}");
 
-    let res = move_file("./inputs/puzzles/day9.txt");
+    let res = move_file("./inputs/puzzles/day09.txt");
     println!("puzzle: {res}");
 }
 

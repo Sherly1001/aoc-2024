@@ -1,18 +1,18 @@
 use std::{collections::HashMap, fs};
 
 pub fn part1() {
-    let res = get_diff("./inputs/samples/day1.txt");
+    let res = get_diff("./inputs/samples/day01.txt");
     println!("sample: {res}");
 
-    let res = get_diff("./inputs/puzzles/day1.txt");
+    let res = get_diff("./inputs/puzzles/day01.txt");
     println!("puzzle: {res}");
 }
 
 pub fn part2() {
-    let res = get_similarity_score("./inputs/samples/day1.txt");
+    let res = get_similarity_score("./inputs/samples/day01.txt");
     println!("sample: {res}");
 
-    let res = get_similarity_score("./inputs/puzzles/day1.txt");
+    let res = get_similarity_score("./inputs/puzzles/day01.txt");
     println!("puzzle: {res}");
 }
 

@@ -7,10 +7,10 @@ pub fn part1() {
         IS_PART2 = false;
     }
 
-    let res = sum_all_correct("./inputs/samples/day7.txt");
+    let res = sum_all_correct("./inputs/samples/day07.txt");
     println!("sample: {res}");
 
-    let res = sum_all_correct("./inputs/puzzles/day7.txt");
+    let res = sum_all_correct("./inputs/puzzles/day07.txt");
     println!("puzzle: {res}");
 }
 
@@ -19,10 +19,10 @@ pub fn part2() {
         IS_PART2 = true;
     }
 
-    let res = sum_all_correct("./inputs/samples/day7.txt");
+    let res = sum_all_correct("./inputs/samples/day07.txt");
     println!("sample: {res}");
 
-    let res = sum_all_correct("./inputs/puzzles/day7.txt");
+    let res = sum_all_correct("./inputs/puzzles/day07.txt");
     println!("puzzle: {res}");
 }
 

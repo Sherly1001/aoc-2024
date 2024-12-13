@@ -11,10 +11,10 @@ pub fn part1() {
         IS_PART2 = false;
     }
 
-    let res = get_antinodes(parse_input_vec2d_char("./inputs/samples/day8.txt")).len();
+    let res = get_antinodes(parse_input_vec2d_char("./inputs/samples/day08.txt")).len();
     println!("sample: {res}");
 
-    let res = get_antinodes(parse_input_vec2d_char("./inputs/puzzles/day8.txt")).len();
+    let res = get_antinodes(parse_input_vec2d_char("./inputs/puzzles/day08.txt")).len();
     println!("puzzle: {res}");
 }
 
@@ -23,10 +23,10 @@ pub fn part2() {
         IS_PART2 = true;
     }
 
-    let res = get_antinodes(parse_input_vec2d_char("./inputs/samples/day8.txt")).len();
+    let res = get_antinodes(parse_input_vec2d_char("./inputs/samples/day08.txt")).len();
     println!("sample: {res}");
 
-    let res = get_antinodes(parse_input_vec2d_char("./inputs/puzzles/day8.txt")).len();
+    let res = get_antinodes(parse_input_vec2d_char("./inputs/puzzles/day08.txt")).len();
     println!("puzzle: {res}");
 }
 

@@ -1,18 +1,18 @@
 use crate::utils::parse_input::parse_input_vec2d_char;
 
 pub fn part1() {
-    let res = count_xmas("./inputs/samples/day4.txt");
+    let res = count_xmas("./inputs/samples/day04.txt");
     println!("sample: {res}");
 
-    let res = count_xmas("./inputs/puzzles/day4.txt");
+    let res = count_xmas("./inputs/puzzles/day04.txt");
     println!("puzzle: {res}");
 }
 
 pub fn part2() {
-    let res = count_x_mas("./inputs/samples/day4.txt");
+    let res = count_x_mas("./inputs/samples/day04.txt");
     println!("sample: {res}");
 
-    let res = count_x_mas("./inputs/puzzles/day4.txt");
+    let res = count_x_mas("./inputs/puzzles/day04.txt");
     println!("puzzle: {res}");
 }
 

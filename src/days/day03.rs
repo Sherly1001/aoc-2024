@@ -1,18 +1,18 @@
 use std::fs;
 
 pub fn part1() {
-    let res = mul("./inputs/samples/day3-1.txt");
+    let res = mul("./inputs/samples/day03-1.txt");
     println!("sample: {res}");
 
-    let res = mul("./inputs/puzzles/day3.txt");
+    let res = mul("./inputs/puzzles/day03.txt");
     println!("puzzle: {res}");
 }
 
 pub fn part2() {
-    let res = prog("./inputs/samples/day3-2.txt");
+    let res = prog("./inputs/samples/day03-2.txt");
     println!("sample: {res}");
 
-    let res = prog("./inputs/puzzles/day3.txt");
+    let res = prog("./inputs/puzzles/day03.txt");
     println!("puzzle: {res}");
 }
 

@@ -1,18 +1,18 @@
 use crate::utils::parse_input::parse_input_vec2d;
 
 pub fn part1() {
-    let res = count_safe_reports("./inputs/samples/day2.txt", false);
+    let res = count_safe_reports("./inputs/samples/day02.txt", false);
     println!("sample: {res}");
 
-    let res = count_safe_reports("./inputs/puzzles/day2.txt", false);
+    let res = count_safe_reports("./inputs/puzzles/day02.txt", false);
     println!("puzzle: {res}");
 }
 
 pub fn part2() {
-    let res = count_safe_reports("./inputs/samples/day2.txt", true);
+    let res = count_safe_reports("./inputs/samples/day02.txt", true);
     println!("sample: {res}");
 
-    let res = count_safe_reports("./inputs/puzzles/day2.txt", true);
+    let res = count_safe_reports("./inputs/puzzles/day02.txt", true);
     println!("puzzle: {res}");
 }
 

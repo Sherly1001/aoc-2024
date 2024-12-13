@@ -3,18 +3,18 @@ use std::collections::{HashMap, HashSet};
 use crate::utils::{parse_input::parse_input_vec2d_char, vec_get_bounded::GetBounded};
 
 pub fn part1() {
-    let res = get_visited(&parse_input_vec2d_char("./inputs/samples/day6.txt")).len();
+    let res = get_visited(&parse_input_vec2d_char("./inputs/samples/day06.txt")).len();
     println!("sample: {res}");
 
-    let res = get_visited(&parse_input_vec2d_char("./inputs/puzzles/day6.txt")).len();
+    let res = get_visited(&parse_input_vec2d_char("./inputs/puzzles/day06.txt")).len();
     println!("puzzle: {res}");
 }
 
 pub fn part2() {
-    let res = count_options("./inputs/samples/day6.txt");
+    let res = count_options("./inputs/samples/day06.txt");
     println!("sample: {res}");
 
-    let res = count_options("./inputs/puzzles/day6.txt");
+    let res = count_options("./inputs/puzzles/day06.txt");
     println!("puzzle: {res}");
 }
 
