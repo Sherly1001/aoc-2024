@@ -14,7 +14,8 @@ impl<T> GetBounded<T> for Vec<T> {
     }
 }
 
-trait CheckBounds {
+#[allow(unused)]
+pub trait CheckBounds {
     fn check_bounds(&self, idx: i64) -> Option<usize>;
 }
 
