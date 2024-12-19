@@ -30,7 +30,7 @@ pub fn part2() {
     println!("puzzle: {res}");
 }
 
-pub fn total_price(file_name: &str) -> usize {
+fn total_price(file_name: &str) -> usize {
     let grid = parse_input_vec2d_char(file_name);
 
     let mut blocks = HashMap::new();

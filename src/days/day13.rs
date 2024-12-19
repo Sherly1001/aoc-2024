@@ -27,7 +27,7 @@ pub fn part2() {
     println!("puzzle: {res}");
 }
 
-pub fn get_total_token(file_name: &str) -> i64 {
+fn get_total_token(file_name: &str) -> i64 {
     parse_input(file_name)
         .into_iter()
         .filter_map(solve_equations)
@@ -36,11 +36,11 @@ pub fn get_total_token(file_name: &str) -> i64 {
 }
 
 const EPSILON: f64 = 10e-3;
-pub fn is_int(a: f64) -> bool {
+fn is_int(a: f64) -> bool {
     (a - a.round()).abs() <= EPSILON
 }
 
-pub fn solve_equations(
+fn solve_equations(
     ((a1, b1, c1), (a2, b2, c2)): ((i64, i64, i64), (i64, i64, i64)),
 ) -> Option<(i64, i64)> {
     let (a1, b1, c1, a2, b2, c2) = (
@@ -63,7 +63,7 @@ pub fn solve_equations(
     }
 }
 
-pub fn parse_input(file_name: &str) -> Vec<((i64, i64, i64), (i64, i64, i64))> {
+fn parse_input(file_name: &str) -> Vec<((i64, i64, i64), (i64, i64, i64))> {
     let re_a = Regex::new(r"^Button A: X\+(\d+), Y\+(\d+)$").unwrap();
     let re_b = Regex::new(r"^Button B: X\+(\d+), Y\+(\d+)$").unwrap();
     let re_prize = Regex::new(r"^Prize: X=(\d+), Y=(\d+)$").unwrap();

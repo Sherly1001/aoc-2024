@@ -18,7 +18,7 @@ pub fn part2() {
     println!("puzzle: {res}");
 }
 
-pub fn move_file_splited(file_name: &str) -> usize {
+fn move_file_splited(file_name: &str) -> usize {
     let mut disk: Vec<_> = fs::read_to_string(file_name)
         .unwrap()
         .chars()
@@ -63,7 +63,7 @@ pub fn move_file_splited(file_name: &str) -> usize {
     sum
 }
 
-pub fn move_file(file_name: &str) -> usize {
+fn move_file(file_name: &str) -> usize {
     let mut disk_map: Vec<_> = fs::read_to_string(file_name)
         .unwrap()
         .trim()

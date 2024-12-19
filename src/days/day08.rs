@@ -30,7 +30,7 @@ pub fn part2() {
     println!("puzzle: {res}");
 }
 
-pub fn get_antinodes(grid: Vec<Vec<char>>) -> HashSet<(i64, i64)> {
+fn get_antinodes(grid: Vec<Vec<char>>) -> HashSet<(i64, i64)> {
     let (n, m) = (grid.len(), grid[0].len());
     iproduct!(0..n, 0..m)
         .filter(|&(i, j)| grid[i][j] != '.')

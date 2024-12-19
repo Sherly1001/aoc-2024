@@ -16,7 +16,7 @@ pub fn part2() {
     println!("puzzle: {res}");
 }
 
-pub fn count_xmas(file_name: &str) -> usize {
+fn count_xmas(file_name: &str) -> usize {
     let map = parse_input_vec2d_char(file_name);
 
     let mut count = 0;
@@ -41,7 +41,7 @@ pub fn count_xmas(file_name: &str) -> usize {
     count
 }
 
-pub fn count_x_mas(file_name: &str) -> usize {
+fn count_x_mas(file_name: &str) -> usize {
     let map = parse_input_vec2d_char(file_name);
 
     let mut count = 0;
@@ -79,7 +79,7 @@ fn add(i: usize, x: i64) -> Option<usize> {
     }
 }
 
-pub fn get_string_from_to(
+fn get_string_from_to(
     map: &Vec<Vec<char>>,
     i: usize,
     j: usize,

@@ -29,7 +29,7 @@ pub fn part2() {
     println!("puzzle: {res}");
 }
 
-pub fn count_trailheads(
+fn count_trailheads(
     curr: (i64, i64),
     map: &Vec<Vec<usize>>,
     locations: &mut HashMap<(i64, i64), usize>,
@@ -55,7 +55,7 @@ pub fn count_trailheads(
     }
 }
 
-pub fn sum_scores(file_name: &str) -> usize {
+fn sum_scores(file_name: &str) -> usize {
     let map = get_topo_map(file_name);
 
     iproduct!(0..map.len(), 0..map[0].len())
@@ -72,7 +72,7 @@ pub fn sum_scores(file_name: &str) -> usize {
         .sum()
 }
 
-pub fn get_topo_map(file_name: &str) -> Vec<Vec<usize>> {
+fn get_topo_map(file_name: &str) -> Vec<Vec<usize>> {
     parse_input_vec2d_char(file_name)
         .into_iter()
         .map(|v| {

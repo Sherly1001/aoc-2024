@@ -12,7 +12,7 @@ pub fn part2() {
     moving_and_draw("./inputs/puzzles/day14.txt", &(101, 103));
 }
 
-pub fn moving_and_draw(file_name: &str, map_size: &(i64, i64)) {
+fn moving_and_draw(file_name: &str, map_size: &(i64, i64)) {
     let top_tree = vec![
         vec!['.', '.', '#', '.', '.'],
         vec!['.', '#', '#', '#', '.'],
@@ -43,7 +43,7 @@ pub fn moving_and_draw(file_name: &str, map_size: &(i64, i64)) {
     }
 }
 
-pub fn safety_factor_after(file_name: &str, map_size: &(i64, i64), times: &i64) -> usize {
+fn safety_factor_after(file_name: &str, map_size: &(i64, i64), times: &i64) -> usize {
     let positions = parse_input(file_name)
         .iter()
         .map(|robot| moving(robot, map_size, times))
@@ -51,7 +51,7 @@ pub fn safety_factor_after(file_name: &str, map_size: &(i64, i64), times: &i64) 
     safety_factor(&positions, map_size)
 }
 
-pub fn safety_factor(positions: &Vec<(i64, i64)>, (wide, tall): &(i64, i64)) -> usize {
+fn safety_factor(positions: &Vec<(i64, i64)>, (wide, tall): &(i64, i64)) -> usize {
     let middle_wide = wide / &2;
     let middle_tall = tall / &2;
 
@@ -78,7 +78,7 @@ pub fn safety_factor(positions: &Vec<(i64, i64)>, (wide, tall): &(i64, i64)) -> 
         .product()
 }
 
-pub fn moving(
+fn moving(
     ((x, y), (vx, vy)): &((i64, i64), (i64, i64)),
     (wide, tall): &(i64, i64),
     times: &i64,
@@ -97,7 +97,7 @@ pub fn moving(
     (x, y)
 }
 
-pub fn parse_input(file_name: &str) -> Vec<((i64, i64), (i64, i64))> {
+fn parse_input(file_name: &str) -> Vec<((i64, i64), (i64, i64))> {
     fs::read_to_string(file_name)
         .unwrap()
         .lines()

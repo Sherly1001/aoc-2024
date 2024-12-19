@@ -26,7 +26,7 @@ impl IsSafeDiff for i64 {
     }
 }
 
-pub fn is_safe(v: &Vec<i64>) -> bool {
+fn is_safe(v: &Vec<i64>) -> bool {
     let mut last_diff = 0;
     for i in 1..v.len() {
         let diff = v[i] - v[i - 1];
@@ -40,7 +40,7 @@ pub fn is_safe(v: &Vec<i64>) -> bool {
     true
 }
 
-pub fn is_safe_part2(v: &Vec<i64>) -> bool {
+fn is_safe_part2(v: &Vec<i64>) -> bool {
     if is_safe(v) {
         return true;
     }
@@ -56,7 +56,7 @@ pub fn is_safe_part2(v: &Vec<i64>) -> bool {
     false
 }
 
-pub fn count_safe_reports(file_name: &str, is_part2: bool) -> u64 {
+fn count_safe_reports(file_name: &str, is_part2: bool) -> u64 {
     let checker = if is_part2 { is_safe_part2 } else { is_safe };
 
     parse_input_vec2d(file_name)

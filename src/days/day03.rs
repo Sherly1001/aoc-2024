@@ -16,7 +16,7 @@ pub fn part2() {
     println!("puzzle: {res}");
 }
 
-pub fn mul(file_name: &str) -> i64 {
+fn mul(file_name: &str) -> i64 {
     regex::Regex::new(r"mul\((\d{1,3}),(\d{1,3})\)")
         .unwrap()
         .captures_iter(&fs::read_to_string(file_name).unwrap())
@@ -27,7 +27,7 @@ pub fn mul(file_name: &str) -> i64 {
         .sum()
 }
 
-pub fn prog(file_name: &str) -> i64 {
+fn prog(file_name: &str) -> i64 {
     regex::Regex::new(r"(do\(\))|(don't\(\))|(mul\((\d{1,3}),(\d{1,3})\))")
         .unwrap()
         .captures_iter(&fs::read_to_string(file_name).unwrap())

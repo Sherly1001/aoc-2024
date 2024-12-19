@@ -18,7 +18,7 @@ pub fn part2() {
     println!("puzzle: {res}");
 }
 
-pub fn get_visited(map: &Vec<Vec<char>>) -> HashSet<(usize, usize)> {
+fn get_visited(map: &Vec<Vec<char>>) -> HashSet<(usize, usize)> {
     let mut dir = (-1, 0);
     let mut start = (0, 0);
 
@@ -51,7 +51,7 @@ pub fn get_visited(map: &Vec<Vec<char>>) -> HashSet<(usize, usize)> {
     visited
 }
 
-pub fn count_options(file_name: &str) -> usize {
+fn count_options(file_name: &str) -> usize {
     let mut map = parse_input_vec2d_char(file_name);
     let visited = get_visited(&map);
 
@@ -78,7 +78,7 @@ pub fn count_options(file_name: &str) -> usize {
     count
 }
 
-pub fn has_cycle(mut start: (i64, i64), map: &Vec<Vec<char>>) -> bool {
+fn has_cycle(mut start: (i64, i64), map: &Vec<Vec<char>>) -> bool {
     let mut dir = (-1, 0);
 
     let mut trace = HashMap::new();

@@ -16,7 +16,7 @@ pub fn part2() {
     println!("puzzle: {res}");
 }
 
-pub fn get_diff(file_name: &str) -> i64 {
+fn get_diff(file_name: &str) -> i64 {
     let (mut v1, mut v2) = parse_input(file_name);
     v1.sort();
     v2.sort();
@@ -26,7 +26,7 @@ pub fn get_diff(file_name: &str) -> i64 {
         .fold(0, |sum, (v1, v2)| sum + (v1 - v2).abs())
 }
 
-pub fn get_similarity_score(file_name: &str) -> i64 {
+fn get_similarity_score(file_name: &str) -> i64 {
     let (v1, v2) = parse_input(file_name);
 
     let counting = v2.iter().fold(HashMap::new(), |mut acc, v| {

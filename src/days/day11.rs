@@ -16,7 +16,7 @@ pub fn part2() {
     println!("puzzle: {res}");
 }
 
-pub fn blinks(file_name: &str, times: usize) -> usize {
+fn blinks(file_name: &str, times: usize) -> usize {
     let mut cache = HashMap::new();
     fs::read_to_string(file_name)
         .unwrap()
@@ -27,7 +27,7 @@ pub fn blinks(file_name: &str, times: usize) -> usize {
         .sum()
 }
 
-pub fn blink(n: usize, k: usize, cache: &mut HashMap<(usize, usize), usize>) -> usize {
+fn blink(n: usize, k: usize, cache: &mut HashMap<(usize, usize), usize>) -> usize {
     let num_stones = if k == 0 {
         1
     } else if n == 0 {

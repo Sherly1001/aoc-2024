@@ -16,7 +16,7 @@ pub fn part2() {
     println!("puzzle: {res}");
 }
 
-pub fn count_middles(file_name: &str) -> i64 {
+fn count_middles(file_name: &str) -> i64 {
     let (orders, updates) = parse_input(file_name);
     updates
         .iter()
@@ -25,7 +25,7 @@ pub fn count_middles(file_name: &str) -> i64 {
         .sum()
 }
 
-pub fn count_middles_fixed(file_name: &str) -> i64 {
+fn count_middles_fixed(file_name: &str) -> i64 {
     let (orders, updates) = parse_input(file_name);
     updates
         .iter()
@@ -35,13 +35,13 @@ pub fn count_middles_fixed(file_name: &str) -> i64 {
         .sum()
 }
 
-pub fn is_correct(v: &Vec<i64>, o: &Vec<(i64, i64)>) -> bool {
+fn is_correct(v: &Vec<i64>, o: &Vec<(i64, i64)>) -> bool {
     (0..v.len())
         .flat_map(|i| (i + 1..v.len()).map(move |j| (i, j)))
         .all(|(i, j)| !o.contains(&(v[j], v[i])))
 }
 
-pub fn fix_incorrect(v: &Vec<i64>, o: &Vec<(i64, i64)>) -> Vec<i64> {
+fn fix_incorrect(v: &Vec<i64>, o: &Vec<(i64, i64)>) -> Vec<i64> {
     let mut v = v.clone();
 
     v.sort_by(|a, b| {
@@ -55,7 +55,7 @@ pub fn fix_incorrect(v: &Vec<i64>, o: &Vec<(i64, i64)>) -> Vec<i64> {
     v
 }
 
-pub fn parse_input(file_name: &str) -> (Vec<(i64, i64)>, Vec<Vec<i64>>) {
+fn parse_input(file_name: &str) -> (Vec<(i64, i64)>, Vec<Vec<i64>>) {
     let s = fs::read_to_string(file_name).unwrap();
     let (s1, s2) = s.split_once("\n\n").unwrap();
 

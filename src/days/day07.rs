@@ -26,11 +26,11 @@ pub fn part2() {
     println!("puzzle: {res}");
 }
 
-pub fn concat(a: i64, b: i64) -> i64 {
+fn concat(a: i64, b: i64) -> i64 {
     format!("{}{}", a, b).parse().unwrap()
 }
 
-pub fn eval_equation(val: &i64, acc: i64, terms: &[i64]) -> bool {
+fn eval_equation(val: &i64, acc: i64, terms: &[i64]) -> bool {
     if &acc > val {
         false
     } else if terms.len() == 0 {
@@ -42,11 +42,11 @@ pub fn eval_equation(val: &i64, acc: i64, terms: &[i64]) -> bool {
     }
 }
 
-pub fn is_correct_equation(val: &i64, terms: &Vec<i64>) -> bool {
+fn is_correct_equation(val: &i64, terms: &Vec<i64>) -> bool {
     eval_equation(val, terms[0], &terms[1..])
 }
 
-pub fn sum_all_correct(file_name: &str) -> i64 {
+fn sum_all_correct(file_name: &str) -> i64 {
     parse_input(file_name)
         .iter()
         .filter_map(|(val, terms)| {
@@ -59,7 +59,7 @@ pub fn sum_all_correct(file_name: &str) -> i64 {
         .sum()
 }
 
-pub fn parse_input(file_name: &str) -> Vec<(i64, Vec<i64>)> {
+fn parse_input(file_name: &str) -> Vec<(i64, Vec<i64>)> {
     fs::read_to_string(file_name)
         .unwrap()
         .lines()
